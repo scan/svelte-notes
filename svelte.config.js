@@ -1,24 +1,24 @@
 import preprocess from 'svelte-preprocess';
-import adapter from '@sveltejs/adapter-node';
+import adapter from '@sveltejs/adapter-static';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-  preprocess: [preprocess()],
+    preprocess: [preprocess()],
 
-  ssr: true,
+    ssr: true,
 
-  kit: {
-    adapter: adapter({
-      precompress: true,
-    }),
+    kit: {
+        adapter: adapter({
+            precompress: true,
+        }),
 
-    vite: {
-      optimizeDeps: {
-        exclude: [],
-      },
-      plugins: [],
+        vite: {
+            optimizeDeps: {
+                exclude: [],
+            },
+            plugins: [],
+        },
     },
-  },
 };
 
 export default config;
