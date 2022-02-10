@@ -5,9 +5,20 @@ import adapter from '@sveltejs/adapter-static';
 const config = {
     preprocess: [preprocess()],
 
-    ssr: true,
-
     kit: {
+        csp: {
+            mode: 'hash',
+            directives: {
+                'connect-src': ["'self'", 'ws://localhost:3000'],
+            },
+        },
+
+        amp: false,
+        floc: false,
+        prerender: {
+            enabled: false,
+        },
+
         adapter: adapter({
             precompress: true,
         }),

@@ -1,2 +1,13 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+    import NoteList from "$lib/components/NoteList.svelte";
+</script>
+
+<main class="m-2 min-h-[75vh] card card-bordered flex flex-row">
+    <div class="basis-1/4">
+        <NoteList />
+        <div class="card card-bordered">
+            Add note
+        </div>
+    </div>
+    <div class="basis-3/4" />
+</main>
